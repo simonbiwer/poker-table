@@ -5,37 +5,45 @@ const questions = [
         question: "Wie lang ist eine genormte EC-Karte?",
         tips: ["Eine EC-Karte ist 5,4 cm hoch.",
             "Die längste Praline der Welt ist mit 11,3 cm länger."],
+        solution: "8,6 cm"
     },
     {
         question: "Wie viele Seiten hat die gebundene StPO Kommentierung (62. Auflage 2019, Meyer Goßner/Schmitt)?",
         tips: ["Mit Einband ist die Kommentierung 6,0 cm dick.",
             "Wenn man ab heute jeden Tag 32 Seiten lesen würde, wäre man noch vor Ostern fertig."],
+        solution: "2603 Seiten"
     },
     {
         question: "Wie lange ist der Skywalk (Homo)?",
         tips: ["Philipp Lahm würde die Strecke in unter 16 Sekunden laufen.",
             "Die Ortschaft 'Kommen' hat mit 282 Einwohnern (12/24) nicht einmal doppel so viele Einwohner wie der Skywalk Meter."],
+        solution: "150m"
     },
     {
         question: "Wie lange dauert laut Statista das Liebesspiel der Deutschen im Durchschnitt?",
         tips: ["Unser Sex-Nachbar Frankreich vergnügt sich im Durchschnitt 3 Minuten kürzer.",
             "Startet das Liebesspiel pünktlich zur Halbzeit eines Fußballspiels, verpasst man knapp den Anstoß zur 2. Hälfte."],
+        solution: "17,36 min"
     },
     {
         question: "Wie viele TÜV-Verstöße hat Jessica im Jahr 2025 bearbeitet?",
-        tips: ["Die Differenz zwischen der Lösung und dem Durchschnittsalter des aktuellen Schichtdienst beträgt 4,7.",
-            "Natalie Meister steht alphabetisch an eben dieser Stelle in der Alarmierungsliste der PI BKS."],
+        tips: ["Die Differenz zwischen der Lösung und dem Durchschnittsalter des aktuellen Schichtdienstes beträgt 4,7.",
+            "Ralf Orth steht alphabetisch an eben dieser Stelle in der Alarmierungsliste der PI BKS."],
+        solution: "28"
     },
 ];
 
 export default function QuestionsNavigator() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentTipIndex, setCurrentTipIndex] = useState(-1); // State for showing tips incrementally
+    const [solutionRevealed, setSolutionRevealed] = useState(false); // Track whether the solution is revealed
+
 
     const goToNextQuestion = () => {
         if (currentIndex < questions.length - 1) {
             setCurrentIndex(currentIndex + 1);
             setCurrentTipIndex(-1); // Reset tips visibility for the next question
+            setSolutionRevealed(false)
         }
     };
 
@@ -43,6 +51,7 @@ export default function QuestionsNavigator() {
         if (currentIndex > 0) {
             setCurrentIndex(currentIndex - 1);
             setCurrentTipIndex(-1); // Reset tips visibility for the previous question
+            setSolutionRevealed(false)
         }
     };
 
@@ -50,6 +59,11 @@ export default function QuestionsNavigator() {
         if (currentTipIndex < (questions[currentIndex].tips?.length || 0) - 1) {
             setCurrentTipIndex(currentTipIndex + 1);
         }
+    };
+
+    const revealSolution = () => {
+        setSolutionRevealed(true); // Reveal the solution
+        setCurrentTipIndex(-1)
     };
 
     const currentQuestion = questions[currentIndex];
@@ -112,6 +126,51 @@ export default function QuestionsNavigator() {
                 <p style={{ fontStyle: "italic", color: "#aaa", marginTop: "15px" }}>
                     No tips available for this question.
                 </p>
+            )}
+
+            {/* Show Solution */}
+            {!solutionRevealed && (
+                <button
+                    onClick={revealSolution}
+                    style={{
+                        backgroundColor: "#4CAF50", // Green color for the solution button
+                        color: "white",
+                        border: "none",
+                        padding: "8px 12px",
+                        borderRadius: "4px",
+                        marginTop: "10px",
+                        cursor: "pointer",
+                    }}
+                >
+                    Show Solution
+                </button>
+            )}
+
+            {/* Revealed Solution */}
+            {solutionRevealed && (
+                <div
+                    style={{
+                        marginTop: "10px",
+                        border: "1px solid #4CAF50",
+                        padding: "5px",
+                        borderRadius: "6px",
+                        backgroundColor: "#222",
+                        maxWidth: "300px",
+                        fontSize: "14px",
+                        lineHeight: "1.4",
+                        textAlign: "left"
+                    }}
+                >
+                    <h5
+                        style={{
+                            fontSize: "16px",
+                            margin: "0 0 8px",
+                        }}
+                    >
+                        Solution:
+                    </h5>
+                    <p>{currentQuestion.solution}</p>
+                </div>
             )}
 
             {/* Navigation Buttons */}
