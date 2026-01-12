@@ -2,6 +2,7 @@ import  { useReducer } from 'react';
 import './App.css';
 import PokerTable from './PokerTable';
 import Controls from './PlayerControls';
+import QuestionsNavigator from "./QuestionsNavigator.tsx";
 
 type Player = {
     id: string;
@@ -76,6 +77,7 @@ function App() {
 
     return (
         <div className="App">
+            <QuestionsNavigator />
             <PokerTable players={state.players} pot={state.pot} dispatch={dispatch} />
             <Controls players={state.players} pot={state.pot} dispatch={dispatch} />
         </div>

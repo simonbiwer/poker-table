@@ -133,7 +133,7 @@
 .controls {
   position: absolute; /* Make it absolute so we can position it relative to the screen */
   right: 20px; /* Place it 20px away from the right edge of the screen */
-  top: 50%; /* Center it vertically */
+  top: 70%; /* Center it vertically */
   transform: translateY(-50%); /* Adjust for the height of the container */
   background-color: #333; /* Dark grey background for contrast */
   padding: 20px;
