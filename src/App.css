@@ -129,21 +129,6 @@
   background-color: #e67e22; /* Darker orange on hover */
 }
 
-/* Position player-controls at the far-right of the screen */
-.controls {
-  position: absolute; /* Make it absolute so we can position it relative to the screen */
-  right: 20px; /* Place it 20px away from the right edge of the screen */
-  top: 70%; /* Center it vertically */
-  transform: translateY(-50%); /* Adjust for the height of the container */
-  background-color: #333; /* Dark grey background for contrast */
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
-  color: white;
-  width: 500px; /* Give it a fixed width to stabilize layout */
-  height: 200px;
-}
-
 .no-arrows {
   -moz-appearance: textfield; /* Firefox */
 }
