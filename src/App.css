@@ -140,7 +140,8 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
   color: white;
-  width: 250px; /* Give it a fixed width to stabilize layout */
+  width: 500px; /* Give it a fixed width to stabilize layout */
+  height: 200px;
 }
 
 .no-arrows {
