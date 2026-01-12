@@ -2,27 +2,29 @@ import { useState } from "react";
 
 const questions = [
     {
-        question: "What is the goal of the game?",
-        tips: ["The goal is to win the pot.", "Focus on making the best hand or forcing folds."],
+        question: "Wie lang ist eine genormte EC-Karte?",
+        tips: ["Eine EC-Karte ist 5,4 cm hoch.",
+            "Die längste Praline der Welt ist mit 11,3 cm länger."],
     },
     {
-        question: "How do you handle betting rounds?",
-        tips: ["Players can bet, call, raise, or fold.", "Follow the betting sequence strictly."],
+        question: "Wie viele Seiten hat die gebundene StPO Kommentierung (62. Auflage 2019, Meyer Goßner/Schmitt)?",
+        tips: ["Mit Einband ist die Kommentierung 6,0 cm dick.",
+            "Wenn man ab heute jeden Tag 32 Seiten lesen würde, wäre man noch vor Ostern fertig."],
     },
     {
-        question: "What happens when multiple players go all-in?",
-        tips: ["All-in players can win only the portion of the pot they covered.", "Use side pots to manage uncalled amounts."],
+        question: "Wie lange ist der Skywalk (Homo)?",
+        tips: ["Philipp Lahm würde die Strecke in unter 16 Sekunden laufen.",
+            "Die Ortschaft 'Kommen' hat mit 282 Einwohnern (12/24) nicht einmal doppel so viele Einwohner wie der Skywalk Meter."],
     },
     {
-        question: "How do side pots work?",
-        tips: ["A side pot is created when one or more players are all-in.", "Calculations should take player stacks into account."],
+        question: "Wie lange dauert laut Statista das Liebesspiel der Deutschen im Durchschnitt?",
+        tips: ["Unser Sex-Nachbar Frankreich vergnügt sich im Durchschnitt 3 Minuten kürzer.",
+            "Startet das Liebesspiel pünktlich zur Halbzeit eines Fußballspiels, verpasst man knapp den Anstoß zur 2. Hälfte."],
     },
     {
-        question: "What are the rules for splitting the pot?",
-        tips: ["Split the pot equally between tied hands."],
-    },
-    {
-        question: "This question has no tips!", // Example without tips
+        question: "Wie viele TÜV-Verstöße hat Jessica im Jahr 2025 bearbeitet?",
+        tips: ["Die Differenz zwischen der Lösung und dem Durchschnittsalter des aktuellen Schichtdienst beträgt 4,7.",
+            "Natalie Meister steht alphabetisch an eben dieser Stelle in der Alarmierungsliste der PI BKS."],
     },
 ];
 
