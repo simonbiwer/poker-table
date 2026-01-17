@@ -20,17 +20,7 @@
   position: relative; /* Position relative for children */
 }
 
-/* Poker Table Container */
-.poker-table-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-/* Poker Table (The Ellipse Shape) */
+/* Poker Table */
 .poker-table {
   position: relative;
   width: 900px; /* Horizontal diameter of the ellipse (Bigger size) */
@@ -44,7 +34,7 @@
   align-items: center;
 }
 
-/* Pot (Center component inside the table) */
+/* Pot */
 .pot {
   position: absolute;
   top: 50%;
